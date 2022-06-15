@@ -1,6 +1,7 @@
-FROM node:4.6
-WORKDIR /app
-ADD . /app
+FROM node:latest
+WORKDIR /usr/src/app
+COPY package*.json ./
 RUN npm install
+COPY . .
 EXPOSE 3000
-CMD npm start
+CMD [ "npm", "start" ]
